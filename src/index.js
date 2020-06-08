@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Nutshell from './components/Nutshell';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Nutshell />
   </React.StrictMode>,
   document.getElementById('root')
 );
