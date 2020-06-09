@@ -1,11 +1,11 @@
 import React from "react"
 import "./Nutshell.css"
-import Login from "./auth/Login"
+import ApplicationView from '../ApplicationView'
 
 const Nutshell = () =>{
   return (
     <>
-      <Login />
+      <ApplicationView />
     </>
     )
 }

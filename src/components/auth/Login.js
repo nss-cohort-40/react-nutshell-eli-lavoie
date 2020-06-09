@@ -1,6 +1,4 @@
 import React, {useState} from 'react' 
-import { Route, withRouter } from 'react-router-dom'
-import '../../modules/DataManager.js'
 import './Login.css'
 import DataManager from '../../modules/DataManager.js'
 
@@ -19,7 +17,7 @@ const Login = props => {
           if(userLogin.password === inputPassword){
             sessionStorage.setItem("userId", userLogin.id)
             sessionStorage.setItem("authenticated", true)
-            props.history.push("/home")
+            props.history.push("/")
           }
           else{
             window.alert("Incorrect Password.")
@@ -30,7 +28,9 @@ const Login = props => {
         }
       })
   }
-
+  const registerButton = () => {
+    props.history.push("/register")
+  }
   return (
     <div className="login-container">
       <section className="login-header">
@@ -38,11 +38,15 @@ const Login = props => {
         <h3 className="login-subtitle">Please Login</h3>
       </section>
       <section className="login-field">
-        <input type="text" className="username-input" placeholder="username" onChange={event => setUsername(event.target.value)}></input>
-        <input type="password" className="password-input" placeholder="password" onChange={event => setPassword(event.target.value)}></input>
+        <input type="text" className="username-input" placeholder="username" onChange={event => setUsername(event.target.value)}/>
+        <input type="password" className="password-input" placeholder="password" onChange={event => setPassword(event.target.value)}/>
       </section>
       <section className="submit">
-        <button className="submit-button" value="Submit" onClick={ () => verifyLogin(username, password)}>Submit</button>
+        <button className="submit-button" value="Submit" onClick={ () => verifyLogin(username, password)}>Login
+        </button>
+        <button onClick={ () => registerButton()}>
+          Register Here
+        </button>
       </section>
     </div>
   )

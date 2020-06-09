@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom'
 import './index.css';
 import Nutshell from './components/Nutshell';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Router>
     <Nutshell />
-  </React.StrictMode>,
+  </Router>,
   document.getElementById('root')
 );
