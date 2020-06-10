@@ -1,6 +1,7 @@
 import React, {useState} from 'react' 
 import './Login.css'
 import DataManager from '../../modules/DataManager.js'
+import NavbarHeader from '../nav/Navbar'
 
 const Login = props => {
   const [username, setUsername] = useState('')
@@ -18,6 +19,10 @@ const Login = props => {
             sessionStorage.setItem("userId", userLogin.id)
             sessionStorage.setItem("authenticated", true)
             props.history.push("/")
+            window.location.reload()
+            // console.log(NavbarHeader.navHide)
+            // NavbarHeader.toggleView(true)
+            // console.log(NavbarHeader.navHide)
           }
           else{
             window.alert("Incorrect Password.")
