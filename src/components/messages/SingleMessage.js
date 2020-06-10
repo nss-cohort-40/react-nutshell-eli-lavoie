@@ -7,6 +7,7 @@ const SingleMessage = props => {
   const fromUserId = props.messageData.userId
   const currentUserId = sessionStorage.getItem("userId")
   const messageData = props.messageData
+  const messageId = props.messageId
   const [fromUsername, setFromUsername] = useState("")
   const [badgeColor, setBadgeColor] = useState("")
 
@@ -35,7 +36,7 @@ const SingleMessage = props => {
   }, [])
 
   return (
-    <CreateMessageObject messageData={messageData} fromUsername={fromUsername} badgeColor={badgeColor} {...props}/>
+    <CreateMessageObject messageData={messageData} fromUsername={fromUsername} badgeColor={badgeColor} messageId={messageId} {...props}/>
   )
 }
 

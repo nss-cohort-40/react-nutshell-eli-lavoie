@@ -7,24 +7,27 @@ import './RenderMessages.css'
 
 const RenderMessages = props => {
   const [messages, setMessages] = useState([])
-  
 
   const getMessages = (section) => {
     return DataManager.getAll(section).then(messagesFromAPI => setMessages(messagesFromAPI))
   }
 
+  
   useEffect(() => {
     getMessages("messages")
+    
   }, [])
+
 
   return (
     <>
       <div className="message-list">
       <Container>
-          <ListGroup >
-            <NewMessage {...props} />
-            {messages.map(messages => <SingleMessage key={messages.id} messageData={messages} {...props}/>)}
+          <ListGroup className="messages">
+            {messages.map
+            (messages => <SingleMessage key={messages.id} messageData={messages} messageId={messages.id} {...props}/>)}
           </ListGroup>
+            <NewMessage {...props} />
       </Container>
       </div>
     </>

@@ -21,8 +21,8 @@ export default {
       body: JSON.stringify(newData)
     }).then(data => data.json)
   },
-  update(section, updatedData) {
-    return fetch(`${remoteURL}/${section}`, {
+  update(section, updatedData, id) {
+    return fetch(`${remoteURL}/${section}/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
