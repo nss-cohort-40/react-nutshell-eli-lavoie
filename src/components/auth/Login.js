@@ -18,6 +18,7 @@ const Login = props => {
           if(userLogin.password === inputPassword){
             sessionStorage.setItem("userId", userLogin.id)
             sessionStorage.setItem("authenticated", true)
+            sessionStorage.setItem("currentUser", userLogin.username )
             props.history.push("/")
             window.location.reload()
             // console.log(NavbarHeader.navHide)

@@ -1,0 +1,22 @@
+#message-object{
+  display: flex;
+  align-items: baseline;
+}
+
+#edit:hover{
+  color: black;
+  position: relative;
+}
+
+#delete:hover{
+  color: black;
+}
+
+#edited{
+  font-size: 10px;
+  font-style: italic;
+}
+
+#delete-text{
+  font-style: bold;
+}
