@@ -6,7 +6,7 @@ import DataManager from '../../modules/DataManager'
 const CreateMessageObject = props => {
   return (
     <>
-      <ListGroupItem>
+      <ListGroupItem className="h-25">
         <Badge color={props.badgeColor}>{props.fromUsername}</Badge>
         - {props.messageData.message}
       </ListGroupItem>

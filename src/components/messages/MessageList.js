@@ -1,11 +1,11 @@
 import React from 'react'
 import RenderMessages from './RenderMessages'
 
-const Messages = () => {
+const Messages = props => {
   return (
     <>
       <div>
-        <RenderMessages />
+        <RenderMessages {...props}/>
       </div>
     </>
   )
